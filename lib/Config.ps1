@@ -16,11 +16,15 @@ $script:DefaultConfig = [ordered]@{
         rssiAdvertisementTtl       = 30
         # Classic BT ConnectionStatus updates lazily, so require N consecutive
         # seconds of "disconnected" before treating it as a real disconnect.
-        disconnectedSustainSeconds = 25
+        disconnectedSustainSeconds = 30
         # For classic devices, run an SDP query to wake the BT stack and
         # re-read connection status. 0 = probe on every disconnected tick.
         activeProbeEnabled         = $true
         activeProbeAfterSeconds    = 0
+        # Once disconnected, require this many seconds of continuous successful
+        # probes before clearing the sustain timer or cancelling a countdown.
+        # Single blips on a flaky classic-BT link won't reset the timer.
+        reconnectStableSeconds     = 6
     }
     lock             = [ordered]@{
         delaySeconds          = 10

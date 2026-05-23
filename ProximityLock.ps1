@@ -181,6 +181,7 @@ $script:App = [pscustomobject]@{
     PollTimer         = $null
     RssiBelowSince    = $null            # DateTime when RSSI first went below threshold
     DisconnectedSince = $null            # DateTime when BT first reported disconnected (sustain debounce)
+    ConnectedSince    = $null            # DateTime of current continuous-connect streak; reset on any failure
     GraceUntil        = $null            # Lock suppression deadline after start/unlock
     LastSnapshot      = $null
     ProbeFailureCount = 0                # consecutive failed classic probes; reset on success
@@ -206,6 +207,24 @@ function Set-AppState {
         $extra   = if ($NewState -eq 'Countdown') { "$($script:App.CountdownRemain)s" } else { '' }
         Update-TrayStatus -State $NewState -DeviceName $devName -ExtraText $extra
     }
+}
+
+function Update-ConnectionTracking {
+    # Update ConnectedSince based on a fresh snapshot and return whether the
+    # link is stable enough to trust as "device present". A single successful
+    # probe on a flaky classic-BT link doesn't count — we require the connect
+    # streak to last reconnectStableSeconds before clearing sustain timers or
+    # cancelling a countdown.
+    param([Parameter(Mandatory)] $Snapshot)
+    if ($Snapshot.Connected) {
+        if (-not $script:App.ConnectedSince) { $script:App.ConnectedSince = Get-Date }
+        $stableSec = ((Get-Date) - $script:App.ConnectedSince).TotalSeconds
+        $threshold = [int]$script:App.Config.monitor.reconnectStableSeconds
+        if ($threshold -lt 0) { $threshold = 0 }
+        return [bool]($stableSec -ge $threshold)
+    }
+    $script:App.ConnectedSince = $null
+    return $false
 }
 
 function Start-Countdown {
@@ -241,7 +260,8 @@ function Start-Countdown {
                 $useProbe = ([bool]$script:App.Config.monitor.activeProbeEnabled)
                 $snap = Get-BluetoothStatusSnapshot -ActiveProbe $useProbe
                 $script:App.LastSnapshot = $snap
-                $stillLost = -not $snap.Connected
+                $stableConnected = Update-ConnectionTracking -Snapshot $snap
+                $stillLost = -not $stableConnected
                 # If RSSI is back above threshold, treat that as recovery even
                 # when ConnectionStatus still says disconnected (classic BT
                 # ConnectionStatus updates lazily and is often stale).
@@ -390,6 +410,11 @@ function Invoke-PollTick {
         $shouldTrigger = $false
         $reason = $null
 
+        # Update connect-streak tracker. A single successful probe on a
+        # flaky classic-BT link does NOT clear sustain timers — we need
+        # reconnectStableSeconds of continuous connection to count.
+        $stableConnected = Update-ConnectionTracking -Snapshot $snap
+
         # --- Disconnected debounce: classic BT ConnectionStatus is unreliable,
         #     so require N consecutive seconds of "disconnected" before acting. ---
         if (-not $snap.Connected) {
@@ -404,8 +429,9 @@ function Invoke-PollTick {
                 $reason = "Bluetooth sustained disconnected for $([int]$sustainedSec)s"
             }
         } else {
-            if ($script:App.DisconnectedSince) {
-                Write-Log DEBUG 'Poll' "BT reconnected; clearing disconnect sustain timer"
+            if ($stableConnected -and $script:App.DisconnectedSince) {
+                $stableSec = ((Get-Date) - $script:App.ConnectedSince).TotalSeconds
+                Write-Log DEBUG 'Poll' ("BT stable for {0:N0}s; clearing disconnect sustain timer" -f $stableSec)
                 $script:App.DisconnectedSince = $null
             }
 
@@ -525,6 +551,7 @@ function Stop-Monitoring {
     $script:App.RssiBelowSince    = $null
     $script:App.GraceUntil        = $null
     $script:App.ProbeFailureCount = 0
+    $script:App.ConnectedSince    = $null
     Stop-BluetoothMonitor
 }
 
@@ -591,6 +618,7 @@ function Initialize-App {
             $script:App.DisconnectedSince = $null
             $script:App.RssiBelowSince    = $null
             $script:App.ProbeFailureCount = 0
+            $script:App.ConnectedSince    = $null
             Set-GracePeriod -Reason 'workstation unlocked'
             # Resume monitoring after unlock
             if ($script:App.Enabled) {

@@ -12,9 +12,10 @@
     "rssiThresholdDbm": -85,
     "rssiSustainSeconds": 15,
     "rssiAdvertisementTtl": 30,
-    "disconnectedSustainSeconds": 25,
+    "disconnectedSustainSeconds": 30,
     "activeProbeEnabled": true,
-    "activeProbeAfterSeconds": 0
+    "activeProbeAfterSeconds": 0,
+    "reconnectStableSeconds": 6
   },
   "lock": {
     "delaySeconds": 10,

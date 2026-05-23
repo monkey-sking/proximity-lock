@@ -71,9 +71,10 @@ Auto-start invokes `Start-ProximityLock.vbs` — no console window, no taskbar e
     "rssiThresholdDbm": -85,         // below this is considered "away"
     "rssiSustainSeconds": 15,        // signal must stay below threshold this long
     "rssiAdvertisementTtl": 30,      // no advert for this long = signal lost
-    "disconnectedSustainSeconds": 25,// sustain debounce before trusting "disconnected"
+    "disconnectedSustainSeconds": 30,// sustain debounce before trusting "disconnected"
     "activeProbeEnabled": true,      // SDP active probe for classic BT (strongly recommended)
-    "activeProbeAfterSeconds": 0     // run probe after N s of cached-disconnected (0 = every tick)
+    "activeProbeAfterSeconds": 0,    // run probe after N s of cached-disconnected (0 = every tick)
+    "reconnectStableSeconds": 6      // require N s of continuous successful probes before clearing the sustain timer (prevents single blips on a flaky classic-BT link from defeating the lock)
   },
   "lock": {
     "delaySeconds": 10,              // countdown after device drops off

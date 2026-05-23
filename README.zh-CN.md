@@ -71,9 +71,10 @@ wscript .\Start-ProximityLock.vbs
     "rssiThresholdDbm": -85,         // 低于此 dBm 视为离位
     "rssiSustainSeconds": 15,        // 信号需持续低于阈值多少秒
     "rssiAdvertisementTtl": 30,      // 多久没收到广播视为信号丢失
-    "disconnectedSustainSeconds": 25,// 连续多少秒判定 disconnected 才算真断开（去抖）
+    "disconnectedSustainSeconds": 30,// 连续多少秒判定 disconnected 才算真断开（去抖）
     "activeProbeEnabled": true,      // 经典 BT 设备启用 SDP 主动探测（强烈推荐）
-    "activeProbeAfterSeconds": 0     // 缓存状态显示 disconnected 多少秒后主动探测（0 = 每个 tick）
+    "activeProbeAfterSeconds": 0,    // 缓存状态显示 disconnected 多少秒后主动探测（0 = 每个 tick）
+    "reconnectStableSeconds": 6      // 断开后需要连续多少秒成功探测才算真恢复（防止经典蓝牙偶发闪连导致 sustain 计时器被反复清零）
   },
   "lock": {
     "delaySeconds": 10,              // 离位后的缓冲倒计时
