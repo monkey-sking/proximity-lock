@@ -1,0 +1,681 @@
+2026-05-22 08:50:58.071 [INFO] [Session] SessionUnlock detected
+2026-05-22 08:50:58.074 [INFO] [App] Workstation unlocked
+2026-05-22 08:50:58.077 [INFO] [App] Grace period armed: 30s (until 08:51:28). Reason: workstation unlocked
+2026-05-22 08:50:58.080 [INFO] [State] Locked -> Monitoring
+2026-05-22 08:50:59.929 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:03.006 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:07.704 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:14.057 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:18.944 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:22.420 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:28.085 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:31.450 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:37.968 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:43.311 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:49.342 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:54.604 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:51:58.477 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:05.044 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:10.939 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:16.295 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:22.575 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:28.275 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:34.155 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:38.182 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:43.186 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:46.995 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:51.550 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:52:55.865 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:00.935 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:05.018 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:10.095 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:16.505 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:22.874 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:29.310 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:34.396 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:40.871 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:47.242 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:52.181 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:53:56.097 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:00.503 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:05.050 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:09.944 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:14.165 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:19.124 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:21.998 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:25.625 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:32.040 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:37.254 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:43.573 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:49.906 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:55.287 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:54:57.705 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:00.208 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:04.056 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:06.577 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:09.225 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:15.469 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:18.643 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:21.960 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:24.500 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:27.385 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:30.905 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:33.445 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:36.254 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:40.116 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:42.641 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:45.287 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:49.082 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:52.732 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:55:57.769 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:00.334 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:03.067 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:06.787 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:09.304 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:11.798 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:17.214 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:22.131 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:24.755 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:27.252 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:31.087 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:33.807 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:36.198 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:40.249 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:44.183 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:56:51.382 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 08:56:55.335 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:00.549 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:03.090 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:07.260 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:09.467 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:12.093 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:17.138 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:22.322 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:28.611 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:33.871 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:38.652 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:42.795 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:45.252 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:47.893 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:53.310 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:57:56.774 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:00.711 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:03.223 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:09.370 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 08:58:13.836 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:20.501 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:25.157 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:27.680 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:31.362 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:36.576 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:40.590 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:45.457 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:48.125 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:51.934 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:58:55.735 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:00.879 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:03.450 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:05.958 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:11.151 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:14.962 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:20.049 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:23.853 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:27.780 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:30.208 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:32.881 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:36.739 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:39.190 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:43.214 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:45.628 [INFO] [Poll] Active probe restored connection
+2026-05-22 08:59:51.357 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 08:59:55.409 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 08:59:59.505 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:03.567 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:07.599 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:11.728 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:15.842 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:19.941 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:19.948 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:00:24.066 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:24.071 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:00:28.166 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:28.173 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:00:32.253 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:32.265 [INFO] [Poll] Lock suppressed by user activity (idle=2s < 30s). Would-be reason: Bluetooth sustained disconnected for 41s
+2026-05-22 09:00:36.357 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:36.363 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 09:00:40.460 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:40.465 [INFO] [Poll] Lock suppressed by user activity (idle=3s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 09:00:44.561 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:44.566 [INFO] [Poll] Lock suppressed by user activity (idle=7s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 09:00:47.407 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:00:49.023 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:00:54.376 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:00:57.295 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:01:03.388 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:07.465 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:11.577 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:15.758 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:19.808 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:23.911 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:27.974 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:32.005 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:32.007 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:01:36.053 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:36.060 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:01:40.128 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:40.130 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:01:44.209 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:44.214 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 41s
+2026-05-22 09:01:48.274 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:48.276 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 09:01:52.327 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:52.330 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 09:01:56.394 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:01:56.402 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 09:01:59.452 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:02:00.106 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:02:04.236 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:02:06.358 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:02:09.097 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:02:13.040 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:02:18.362 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:22.402 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:26.503 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:30.563 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:34.620 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:38.733 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:42.766 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:46.874 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:46.877 [INFO] [Poll] Lock suppressed by user activity (idle=25s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:02:50.920 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:50.924 [INFO] [Poll] Lock suppressed by user activity (idle=29s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:02:54.994 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:02:54.995 [INFO] [State] Monitoring -> Countdown
+2026-05-22 09:02:55.000 [INFO] [Countdown] Starting 10s countdown. Reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:03:00.066 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:04.100 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:08.123 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:12.216 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:14.441 [WARN] [Countdown] Device reconnected/signal recovered during countdown; cancelling lock
+2026-05-22 09:03:14.442 [INFO] [State] Countdown -> Monitoring
+2026-05-22 09:03:17.265 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:03:21.989 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:03:30.359 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:34.395 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:38.514 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:42.604 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:46.706 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:50.782 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:54.829 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:58.929 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:03:58.934 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:04:02.985 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:04:02.990 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:04:07.095 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:04:07.101 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:04:11.234 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:04:11.239 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 41s
+2026-05-22 09:04:15.309 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:04:15.311 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 09:04:19.353 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:04:19.368 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 09:04:23.436 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:04:23.447 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 09:04:26.425 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:28.537 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:34.018 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:36.363 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:40.347 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:42.789 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:47.761 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:51.696 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:04:55.489 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:03.222 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:06.981 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:09.446 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:12.018 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:17.292 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:21.016 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:26.059 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:29.945 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:35.037 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:38.901 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:42.718 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:45.354 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:50.538 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:05:54.320 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:06:00.425 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:04.537 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:08.584 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:12.704 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:16.803 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:20.927 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:25.005 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:29.090 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:29.096 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:06:33.159 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:33.161 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:06:37.238 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:37.244 [INFO] [Poll] Lock suppressed by user activity (idle=3s < 30s). Would-be reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:06:41.322 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:41.325 [INFO] [Poll] Lock suppressed by user activity (idle=7s < 30s). Would-be reason: Bluetooth sustained disconnected for 41s
+2026-05-22 09:06:45.418 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:45.420 [INFO] [Poll] Lock suppressed by user activity (idle=11s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 09:06:49.535 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:49.541 [INFO] [Poll] Lock suppressed by user activity (idle=15s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 09:06:53.612 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:06:53.620 [INFO] [Poll] Lock suppressed by user activity (idle=19s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 09:06:56.502 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:07:00.626 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:04.727 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:08.766 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:12.894 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:16.972 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:21.037 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:25.127 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:29.208 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:29.216 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:07:33.309 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:33.311 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:07:37.395 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:37.400 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:07:41.475 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:41.482 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 41s
+2026-05-22 09:07:45.566 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:45.572 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 09:07:49.672 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:49.686 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 09:07:53.762 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:53.769 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 09:07:57.865 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:07:57.867 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 57s
+2026-05-22 09:08:06.313 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:09.952 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:08:14.014 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:18.082 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:22.154 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:26.242 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:30.312 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:34.345 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:39.612 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:08:45.401 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:45.789 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:08:51.341 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:55.449 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:08:59.569 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:03.639 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:07.762 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:11.882 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:14.179 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:09:19.249 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:09:21.790 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:09:30.355 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:34.391 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:38.500 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:42.550 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:46.600 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:50.696 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:54.809 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:58.942 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:09:58.945 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:10:02.986 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:02.993 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:10:07.084 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:07.089 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 37s
+2026-05-22 09:10:11.114 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:11.116 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 41s
+2026-05-22 09:10:15.155 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:15.160 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 09:10:19.256 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:19.261 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 09:10:23.383 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:23.389 [INFO] [Poll] Lock suppressed by user activity (idle=2s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 09:10:26.441 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:10:28.561 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:10:34.835 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:10:42.370 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:10:44.787 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:10:51.175 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:10:55.113 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:03.383 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:04.021 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:09.359 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:13.435 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:17.539 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:21.629 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:25.720 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:29.783 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:11:33.501 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:38.610 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:42.467 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:44.942 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:48.778 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:52.726 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:11:59.124 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:12:02.940 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:12:06.796 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:12:09.351 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:12:11.966 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:12:18.372 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:22.471 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:26.602 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:30.694 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:34.730 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:38.854 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:42.971 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:47.062 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:47.068 [INFO] [Poll] Lock suppressed by user activity (idle=28s < 30s). Would-be reason: Bluetooth sustained disconnected for 29s
+2026-05-22 09:12:51.166 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:12:51.172 [INFO] [State] Monitoring -> Countdown
+2026-05-22 09:12:51.189 [INFO] [Countdown] Starting 10s countdown. Reason: Bluetooth sustained disconnected for 33s
+2026-05-22 09:12:56.254 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:00.321 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:04.372 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:08.464 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:12.546 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:14.435 [WARN] [Countdown] Device reconnected/signal recovered during countdown; cancelling lock
+2026-05-22 09:13:14.437 [INFO] [State] Countdown -> Monitoring
+2026-05-22 09:13:15.929 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:18.407 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:21.281 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:27.357 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:30.042 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:35.038 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:39.292 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:41.913 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:13:51.370 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:57.369 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:13:58.068 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:14:03.386 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:07.472 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:11.603 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:15.715 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:19.782 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:23.862 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:26.028 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:14:30.167 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:14:33.971 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:14:37.772 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:14:45.350 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:47.983 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:14:54.401 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:14:56.886 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:00.818 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:03.288 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:05.952 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:10.159 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:12.675 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:15.079 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:18.974 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:21.550 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:24.147 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:27.732 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:33.334 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:15:33.966 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:15:39.337 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:15:43.385 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:15:47.436 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:15:51.487 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:15:55.552 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:15:59.703 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:02.131 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:06.309 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:11.487 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:15.197 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:19.260 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:21.471 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:24.190 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:28.166 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:33.403 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:34.218 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:16:39.369 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:43.453 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:47.559 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:51.655 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:55.742 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:16:59.838 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:17:02.174 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:06.352 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:08.886 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:12.943 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:16.652 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:21.828 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:24.230 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:29.349 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:33.088 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:36.943 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:39.750 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:17:45.381 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 09:17:48.454 [INFO] [Poll] Active probe restored connection
+2026-05-22 09:18:53.817 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:43:39.463 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:43:40.624 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:43:45.466 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:43:46.629 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:43:51.477 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:43:52.621 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:43:57.468 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:43:58.550 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:03.470 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:44:04.631 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:04.686 [INFO] [Session] SessionLock detected
+2026-05-22 10:44:04.689 [INFO] [App] Workstation locked (by us or otherwise)
+2026-05-22 10:44:04.693 [INFO] [State] Monitoring -> Locked
+2026-05-22 10:44:33.057 [INFO] [Session] SessionUnlock detected
+2026-05-22 10:44:33.059 [INFO] [App] Workstation unlocked
+2026-05-22 10:44:33.064 [INFO] [App] Grace period armed: 30s (until 10:45:03). Reason: workstation unlocked
+2026-05-22 10:44:33.067 [INFO] [State] Locked -> Monitoring
+2026-05-22 10:44:34.402 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:38.368 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:43.404 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:50.869 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:54.575 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:44:57.160 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:45:03.468 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:07.501 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:11.547 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:15.601 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:19.640 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:23.690 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:27.730 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:31.790 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:31.792 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 28s
+2026-05-22 10:45:35.839 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:35.842 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 32s
+2026-05-22 10:45:39.881 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:39.885 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 36s
+2026-05-22 10:45:43.930 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:43.932 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 40s
+2026-05-22 10:45:47.986 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:47.987 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 10:45:52.024 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:52.025 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 10:45:56.086 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:45:56.087 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 10:45:59.516 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:46:01.527 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:46:07.700 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:46:12.952 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:46:18.477 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:22.508 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:26.556 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:30.589 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:34.651 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:38.705 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:42.754 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:46.805 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:46.807 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 28s
+2026-05-22 10:46:50.869 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:50.870 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 32s
+2026-05-22 10:46:54.915 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:54.917 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 36s
+2026-05-22 10:46:58.969 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:46:58.970 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 40s
+2026-05-22 10:47:03.015 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:03.016 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 10:47:07.063 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:07.066 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 10:47:11.111 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:11.114 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 10:47:14.503 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:47:18.580 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:22.620 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:26.669 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:30.731 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:34.779 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:38.835 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:42.880 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:46.916 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:47:46.918 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 28s
+2026-05-22 10:47:51.288 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:47:55.333 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:47:59.190 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:06.491 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:09.121 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:15.491 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:18.083 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:22.121 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:24.495 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:27.340 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:31.033 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:33.682 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:48:39.492 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:43.535 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:47.577 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:51.626 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:55.676 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:48:59.728 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:03.760 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:07.811 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:07.813 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 28s
+2026-05-22 10:49:11.863 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:11.867 [INFO] [Poll] Lock suppressed by user activity (idle=0s < 30s). Would-be reason: Bluetooth sustained disconnected for 32s
+2026-05-22 10:49:15.904 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:15.906 [INFO] [Poll] Lock suppressed by user activity (idle=1s < 30s). Would-be reason: Bluetooth sustained disconnected for 36s
+2026-05-22 10:49:19.945 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:19.946 [INFO] [Poll] Lock suppressed by user activity (idle=5s < 30s). Would-be reason: Bluetooth sustained disconnected for 40s
+2026-05-22 10:49:23.995 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:23.999 [INFO] [Poll] Lock suppressed by user activity (idle=9s < 30s). Would-be reason: Bluetooth sustained disconnected for 45s
+2026-05-22 10:49:28.049 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:28.050 [INFO] [Poll] Lock suppressed by user activity (idle=13s < 30s). Would-be reason: Bluetooth sustained disconnected for 49s
+2026-05-22 10:49:32.090 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:49:32.091 [INFO] [Poll] Lock suppressed by user activity (idle=17s < 30s). Would-be reason: Bluetooth sustained disconnected for 53s
+2026-05-22 10:49:35.529 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:36.702 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:40.226 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:42.861 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:45.381 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:49.367 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:51.537 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:49:57.114 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:00.727 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:03.315 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:07.267 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:12.512 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:16.221 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:18.426 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:21.192 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:25.205 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:27.365 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:50:33.499 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:37.548 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:41.596 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:45.627 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:49.677 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:53.733 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:50:57.787 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:51:01.153 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:03.107 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:07.357 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:09.643 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:13.620 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:18.840 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:21.371 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:25.512 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:30.350 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:33.898 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:36.720 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:39.039 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:45.494 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:51:47.970 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:51.915 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:54.337 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:51:57.210 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:52:01.080 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:52:03.317 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:52:09.527 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 10:52:10.305 [INFO] [Poll] Active probe restored connection
+2026-05-22 10:52:16.481 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:30:36.613 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:30:37.767 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:30:42.596 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:30:43.759 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:30:48.602 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:30:49.760 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:30:54.594 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:30:55.759 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:00.602 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:31:01.783 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:01.881 [INFO] [Session] SessionLock detected
+2026-05-22 11:31:01.885 [INFO] [App] Workstation locked (by us or otherwise)
+2026-05-22 11:31:01.888 [INFO] [State] Monitoring -> Locked
+2026-05-22 11:31:21.343 [INFO] [Session] SessionUnlock detected
+2026-05-22 11:31:21.346 [INFO] [App] Workstation unlocked
+2026-05-22 11:31:21.349 [INFO] [App] Grace period armed: 30s (until 11:31:51). Reason: workstation unlocked
+2026-05-22 11:31:21.351 [INFO] [State] Locked -> Monitoring
+2026-05-22 11:31:22.713 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:27.541 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:31.382 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:36.333 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:40.263 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:42.771 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:45.458 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:31:51.624 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:31:59.466 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:32:03.426 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:32:07.360 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:32:12.611 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:16.706 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:20.765 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:24.861 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:28.920 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:33.023 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:37.103 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:32:40.178 [INFO] [Poll] Active probe restored connection
+2026-05-22 11:32:45.631 [INFO] [Bluetooth] Active probe failed: WinRT async operation timed out after 4000ms
+2026-05-22 11:34:35.338 [INFO] [App] ==== Proximity Lock starting (root=D:\Program Files\blue, config=D:\Program Files\blue\config.json) ====
+2026-05-22 11:34:35.391 [INFO] [App] Target device: iPhone (classic)
+2026-05-22 11:34:35.821 [INFO] [Session] Session lock/unlock listener registered
+2026-05-22 11:34:35.908 [INFO] [Bluetooth] Bound classic device: iPhone [Bluetooth#Bluetooth00:1a:7d:da:71:13-80:b9:89:b7:8c:92]
+2026-05-22 11:34:35.922 [INFO] [App] Monitoring started. Device='iPhone' poll=3s delay=20s useRssi=False
+2026-05-22 11:34:35.927 [INFO] [State] Idle -> Monitoring
+2026-05-22 11:34:35.939 [INFO] [App] Grace period armed: 60s (until 11:35:35). Reason: monitoring started
+2026-05-22 11:37:49.477 [INFO] [App] ==== Proximity Lock starting (root=D:\Program Files\blue, config=D:\Program Files\blue\config.json) ====
+2026-05-22 11:37:49.506 [INFO] [App] Target device: iPhone (classic)
+2026-05-22 11:37:49.980 [INFO] [Session] Session lock/unlock listener registered
+2026-05-22 11:37:50.091 [INFO] [Bluetooth] Bound classic device: iPhone [Bluetooth#Bluetooth00:1a:7d:da:71:13-80:b9:89:b7:8c:92]
+2026-05-22 11:37:50.111 [INFO] [App] Monitoring started. Device='iPhone' poll=3s delay=20s useRssi=False
+2026-05-22 11:37:50.115 [INFO] [State] Idle -> Monitoring
+2026-05-22 11:37:50.128 [INFO] [App] Grace period armed: 60s (until 11:38:50). Reason: monitoring started
+2026-05-22 12:08:10.099 [INFO] [Session] SessionLock detected
+2026-05-22 12:08:10.106 [INFO] [App] Workstation locked (by us or otherwise)
+2026-05-22 12:08:10.110 [INFO] [State] Monitoring -> Locked
+2026-05-22 12:58:49.532 [INFO] [Session] SessionUnlock detected
+2026-05-22 12:58:49.538 [INFO] [App] Workstation unlocked
+2026-05-22 12:58:49.549 [INFO] [App] Grace period armed: 60s (until 12:59:49). Reason: workstation unlocked
+2026-05-22 12:58:49.554 [INFO] [State] Locked -> Monitoring
+2026-05-22 18:50:58.612 [INFO] [Session] SessionLock detected
+2026-05-22 18:50:58.621 [INFO] [App] Workstation locked (by us or otherwise)
+2026-05-22 18:50:58.627 [INFO] [State] Monitoring -> Locked
+2026-05-22 18:51:03.287 [INFO] [Session] SessionUnlock detected
+2026-05-22 18:51:03.290 [INFO] [App] Workstation unlocked
+2026-05-22 18:51:03.293 [INFO] [App] Grace period armed: 60s (until 18:52:03). Reason: workstation unlocked
+2026-05-22 18:51:03.296 [INFO] [State] Locked -> Monitoring
+2026-05-22 18:52:02.438 [INFO] [Session] SessionLock detected
+2026-05-22 18:52:02.441 [INFO] [App] Workstation locked (by us or otherwise)
+2026-05-22 18:52:02.443 [INFO] [State] Monitoring -> Locked
+2026-05-22 20:45:21.514 [INFO] [Session] SessionUnlock detected
+2026-05-22 20:45:21.517 [INFO] [App] Workstation unlocked
+2026-05-22 20:45:21.520 [INFO] [App] Grace period armed: 60s (until 20:46:21). Reason: workstation unlocked
+2026-05-22 20:45:21.522 [INFO] [State] Locked -> Monitoring

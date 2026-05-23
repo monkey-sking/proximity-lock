@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "device": {
+    "id": null,
+    "name": null,
+    "kind": "auto",
+    "bluetoothAddress": null
+  },
+  "monitor": {
+    "pollIntervalSeconds": 3,
+    "useRssi": false,
+    "rssiThresholdDbm": -85,
+    "rssiSustainSeconds": 15,
+    "rssiAdvertisementTtl": 30,
+    "disconnectedSustainSeconds": 25,
+    "activeProbeEnabled": true,
+    "activeProbeAfterSeconds": 0
+  },
+  "lock": {
+    "delaySeconds": 10,
+    "cancelOnReconnect": true,
+    "gracePeriodSeconds": 30,
+    "requireIdleSeconds": 30
+  },
+  "hooks": {
+    "onLock": "scripts/on-lock.example.bat",
+    "onUnlock": "scripts/on-unlock.example.bat",
+    "timeoutSeconds": 30,
+    "runHidden": true
+  },
+  "logging": {
+    "directory": "logs",
+    "level": "INFO",
+    "maxBytes": 5242880,
+    "keepFiles": 10,
+    "echoToConsole": false
+  },
+  "autoStart": {
+    "startEnabled": true
+  }
+}

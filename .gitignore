@@ -1,0 +1,24 @@
+# Runtime config — generated on first run, contains the user's paired-device ID.
+# Use config.example.json as the template.
+config.json
+
+# Claude Code local settings
+.claude/
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# PowerShell transcript / verbose-trace files
+*.psjob
+*.transcript
+
+# Backup / temporary
+*.bak
+*.tmp
+~$*
