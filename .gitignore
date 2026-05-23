@@ -2,6 +2,9 @@
 # Use config.example.json as the template.
 config.json
 
+# Runtime logs — local to each machine, not interesting in version control
+logs/
+
 # Claude Code local settings
 .claude/
 
