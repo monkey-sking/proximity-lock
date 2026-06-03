@@ -1,4 +1,4 @@
-﻿# Tray.ps1 -- System tray (NotifyIcon) with menu and status updates
+# Tray.ps1 -- System tray (NotifyIcon) with menu and status updates
 
 Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
 Add-Type -AssemblyName System.Drawing      -ErrorAction Stop
@@ -118,13 +118,14 @@ function Update-TrayStatus {
     param(
         [Parameter(Mandatory)] [ValidateSet('Idle','Monitoring','Countdown','Locked','Disabled','Error')] [string] $State,
         [string] $DeviceName,
-        [string] $ExtraText
+        [string] $ExtraText,
+        [bool] $DeviceConnected = $true
     )
     if (-not $script:Tray) { return }
 
     $color = switch ($State) {
         'Idle'       { 'Gray'   }
-        'Monitoring' { 'Green'  }
+        'Monitoring' { if ($DeviceConnected) { 'Green' } else { 'Yellow' } }
         'Countdown'  { 'Yellow' }
         'Locked'     { 'Gray'   }
         'Disabled'   { 'Red'    }
@@ -136,6 +137,10 @@ function Update-TrayStatus {
     try { if ($oldIcon) { $oldIcon.Dispose() } } catch { }
 
     $label = "$((Get-LocaleString 'Status')): $State"
+    if ($State -eq 'Monitoring') {
+        $connStr = if ($DeviceConnected) { "Connected" } else { "Disconnected" }
+        $label += " ($connStr)"
+    }
     if ($ExtraText) { $label += " ($ExtraText)" }
     $script:Tray.StatusItem.Text = $label
 

@@ -206,7 +206,8 @@ function Set-AppState {
     if (-not $NoTray) {
         $devName = if ($script:App.Config.device.name) { $script:App.Config.device.name } else { '(none)' }
         $extra   = if ($NewState -eq 'Countdown') { "$($script:App.CountdownRemain)s" } else { '' }
-        Update-TrayStatus -State $NewState -DeviceName $devName -ExtraText $extra
+        $conn    = if ($script:App.LastSnapshot) { $script:App.LastSnapshot.Connected } else { $true }
+        Update-TrayStatus -State $NewState -DeviceName $devName -ExtraText $extra -DeviceConnected $conn
     }
 }
 
@@ -369,12 +370,14 @@ function Invoke-UnlockHook {
     $resolved = Resolve-PathRelative -BasePath $script:App.AppRoot -InputPath $hook
     if (-not $resolved) { return }
     Start-HookAsync -ScriptPath $resolved -HookName 'OnUnlock'
-}
+}$script:PollTickActive = $false
 
 function Invoke-PollTick {
+    if ($script:PollTickActive) { return }
     if (-not $script:App.Enabled) { return }
     if ($script:App.State -in @('Countdown','Locked')) { return }   # countdown handles its own polling; Locked waits for SessionUnlock
 
+    $script:PollTickActive = $true
     try {
         $snap = Get-BluetoothStatusSnapshot
         $script:App.LastSnapshot = $snap
@@ -412,11 +415,17 @@ function Invoke-PollTick {
             Write-Log DEBUG 'Poll' ("connected={0} rssi=n/a probe={1}" -f $snap.Connected, $snap.ProbeUsed)
         }
 
+        # Update tray status to show connection status
+        if (-not $NoTray -and $script:App.State -eq 'Monitoring') {
+            $devName = if ($script:App.Config.device.name) { $script:App.Config.device.name } else { '(none)' }
+            Update-TrayStatus -State 'Monitoring' -DeviceName $devName -DeviceConnected $snap.Connected
+        }
+
         $shouldTrigger = $false
         $reason = $null
 
         # Update connect-streak tracker. A single successful probe on a
-        # flaky classic-BT link does NOT clear sustain timers 鈥?we need
+        # flaky classic-BT link does NOT clear sustain timers — we need
         # reconnectStableSeconds of continuous connection to count.
         $stableConnected = Update-ConnectionTracking -Snapshot $snap
 
@@ -472,7 +481,7 @@ function Invoke-PollTick {
                 if ($idleSec -ne $null -and $idleSec -lt $requireIdle) {
                     Write-Log INFO 'Poll' ("Lock suppressed by user activity (idle={0:N0}s < {1}s). Would-be reason: {2}" -f $idleSec, $requireIdle, $reason)
                     $shouldTrigger = $false
-                    # Don't reset DisconnectedSince 鈥?if BT stays away, the moment
+                    # Don't reset DisconnectedSince — if BT stays away, the moment
                     # user goes idle we want to lock immediately, not re-debounce.
                 }
             }
@@ -502,6 +511,8 @@ function Invoke-PollTick {
     } catch {
         Write-Log ERROR 'Poll' "Poll tick failed: $($_.Exception.Message)"
         Set-AppState 'Error'
+    } finally {
+        $script:PollTickActive = $false
     }
 }
 

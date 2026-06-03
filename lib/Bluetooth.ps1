@@ -1,4 +1,4 @@
-# Bluetooth.ps1 -- Enumerate paired devices, monitor connection + optional RSSI
+﻿# Bluetooth.ps1 -- Enumerate paired devices, monitor connection + optional RSSI
 
 # Requires: WinRT.ps1 and Logger.ps1 dot-sourced beforehand
 
@@ -196,11 +196,12 @@ function Invoke-ClassicActiveProbe {
         $res = Await `
             ($Device.GetRfcommServicesAsync([Windows.Devices.Bluetooth.BluetoothCacheMode]::Uncached)) `
             ([Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult]) $TimeoutMs
-        if ($res -and $res.Error -eq [Windows.Devices.Bluetooth.BluetoothError]::Success) {
+        if ($res -and $res.Error -eq [Windows.Devices.Bluetooth.BluetoothError]::Success -and $res.Services -and $res.Services.Count -gt 0) {
             return $true
         }
-        $errStr = if ($res) { $res.Error.ToString() } else { "null result" }
-        Write-Log DEBUG 'Bluetooth' "Active probe returned Bluetooth error: $errStr"
+        $svcCount = if ($res -and $res.Services) { $res.Services.Count } else { 0 }
+        $errStr = if ($res) { "$($res.Error.ToString()) (services=$svcCount)" } else { "null result" }
+        Write-Log DEBUG 'Bluetooth' "Active probe returned: $errStr"
         return $false
     } catch {
         Write-Log DEBUG 'Bluetooth' "Active probe failed: $($_.Exception.Message)"

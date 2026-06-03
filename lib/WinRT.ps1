@@ -1,4 +1,4 @@
-# WinRT.ps1 -- Async bridge for WinRT IAsyncOperation/IAsyncAction from PS 5.1
+﻿# WinRT.ps1 -- Async bridge for WinRT IAsyncOperation/IAsyncAction from PS 5.1
 
 Add-Type -AssemblyName System.Runtime.WindowsRuntime -ErrorAction Stop
 
@@ -40,8 +40,14 @@ function Await {
     )
     $mi = $script:AsTaskMI_Op.MakeGenericMethod($ResultType)
     $task = $mi.Invoke($null, @($AsyncOp))
-    if (-not $task.Wait($TimeoutMs)) {
-        throw "WinRT async operation timed out after ${TimeoutMs}ms"
+    
+    $sw = [System.Diagnostics.Stopwatch]::StartNew()
+    while (-not $task.IsCompleted -and -not $task.IsFaulted -and -not $task.IsCanceled) {
+        if ($sw.ElapsedMilliseconds -ge $TimeoutMs) {
+            throw "WinRT async operation timed out after ${TimeoutMs}ms"
+        }
+        [System.Windows.Forms.Application]::DoEvents()
+        [System.Threading.Thread]::Sleep(50)
     }
     return $task.Result
 }
@@ -52,7 +58,13 @@ function AwaitAction {
         [Parameter(Position=1)] [int] $TimeoutMs = 15000
     )
     $task = $script:AsTaskMI_Action.Invoke($null, @($AsyncAction))
-    if (-not $task.Wait($TimeoutMs)) {
-        throw "WinRT async action timed out after ${TimeoutMs}ms"
+    
+    $sw = [System.Diagnostics.Stopwatch]::StartNew()
+    while (-not $task.IsCompleted -and -not $task.IsFaulted -and -not $task.IsCanceled) {
+        if ($sw.ElapsedMilliseconds -ge $TimeoutMs) {
+            throw "WinRT async action timed out after ${TimeoutMs}ms"
+        }
+        [System.Windows.Forms.Application]::DoEvents()
+        [System.Threading.Thread]::Sleep(50)
     }
 }
