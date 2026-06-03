@@ -1,4 +1,4 @@
-# Proximity Lock
+﻿# Proximity Lock
 
 **Language**: **English** · [中文](README.zh-CN.md)
 
@@ -202,10 +202,13 @@ blue/
 | Configurable countdown | `Start-Countdown`, 1 s tick |
 | Cancel-on-reconnect | `cancelOnReconnect`, re-checked every countdown tick |
 | LockWorkStation | `lib/Lock.ps1` `Invoke-WorkstationLock` (P/Invoke user32) |
+| Instant Monitor Power Off | `lib/Lock.ps1` `Invoke-WorkstationLock` (Sends SC_MONITORPOWER=2) |
+| Monitor Auto Wake on Reconnect | `Invoke-PollTick` + `lib/Lock.ps1` `Invoke-ScreenWake` |
+| UI Localization (i18n) | `lib/I18n.ps1` (English and Simplified Chinese) |
 | OnLock / OnUnlock hooks | `Invoke-LockSequence`, `Register-SessionEvents` |
 | Leveled log w/ timestamp + module | `lib/Logger.ps1` |
 | Daily + size-based rotation | `Update-LogFilePath` + `Test-LogRotate` |
-| Low CPU | configurable poll (default 3 s), event-driven + Timer, no busy-wait |
+| Low CPU & Memory footprint | Configurable poll (default 3 s), explicit `[System.GC]::Collect()` on poll ticks |
 | Persistent system tray | `lib/Tray.ps1` |
 | No admin rights | runs as the current user |
 

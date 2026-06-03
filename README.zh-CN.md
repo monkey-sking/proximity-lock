@@ -1,4 +1,4 @@
-# Proximity Lock
+﻿# Proximity Lock
 
 **语言 / Language**: [English](README.md) · **中文**
 
@@ -200,10 +200,13 @@ blue/
 | 弱信号 (RSSI) 判定 | `BluetoothLEAdvertisementWatcher` + sustain timer |
 | 自定义延迟倒计时 | `Start-Countdown`，1 秒 tick |
 | 防误触（恢复即取消） | `cancelOnReconnect`，倒计时内每 tick 复查 |
-| LockWorkStation | `lib/Lock.ps1` `Invoke-WorkstationLock` P/Invoke user32 |
+| 自动锁屏 (LockWorkStation) | `lib/Lock.ps1` `Invoke-WorkstationLock` P/Invoke user32 |
+| 锁屏立即黑屏/熄屏 | `lib/Lock.ps1` `Invoke-WorkstationLock` (发送 SC_MONITORPOWER=2 信号) |
+| 蓝牙恢复自动点亮屏幕 | `Invoke-PollTick` + `lib/Lock.ps1` `Invoke-ScreenWake` |
+| 界面多语言本地化 (i18n) | `lib/I18n.ps1` (支持中英文环境自动切换) |
 | OnLock / OnUnlock 钩子 | `Invoke-LockSequence`、`Register-SessionEvents` |
 | 分级日志 + 时间戳 + 模块 | `lib/Logger.ps1` |
 | 按天文件 + 按大小切分 | `Update-LogFilePath` + `Test-LogRotate` |
-| 低 CPU 占用 | 轮询间隔可配（默认 3s），事件驱动 + Timer，不忙等 |
+| 低 CPU 与内存占用 | 轮询间隔可配（默认 3s），每次轮询显式执行 `[System.GC]::Collect()` |
 | 系统托盘常驻 | `lib/Tray.ps1` |
 | 无管理员权限 | 默认全部以普通用户运行 |
