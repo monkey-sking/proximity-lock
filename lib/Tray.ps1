@@ -71,34 +71,34 @@ function Initialize-Tray {
 
     $menu = New-Object System.Windows.Forms.ContextMenuStrip
 
-    $miStatus = New-Object System.Windows.Forms.ToolStripMenuItem 'Status: starting...'
+    $miStatus = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'StatusStarting')
     $miStatus.Enabled = $false
 
-    $miDevice = New-Object System.Windows.Forms.ToolStripMenuItem 'Device: (none)'
+    $miDevice = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'DeviceNone')
     $miDevice.Enabled = $false
 
     $miSep1   = New-Object System.Windows.Forms.ToolStripSeparator
 
-    $miToggle = New-Object System.Windows.Forms.ToolStripMenuItem 'Disable monitoring'
+    $miToggle = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'DisableMonitoring')
     if ($OnToggleEnabled) { $miToggle.Add_Click({ & $OnToggleEnabled }.GetNewClosure()) }
 
-    $miLock   = New-Object System.Windows.Forms.ToolStripMenuItem 'Lock workstation now'
+    $miLock   = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'LockNow')
     if ($OnLockNow) { $miLock.Add_Click({ & $OnLockNow }.GetNewClosure()) }
 
     $miSep2   = New-Object System.Windows.Forms.ToolStripSeparator
 
-    $miSelect = New-Object System.Windows.Forms.ToolStripMenuItem 'Select target device...'
+    $miSelect = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'SelectDeviceMenu')
     if ($OnSelectDevice) { $miSelect.Add_Click({ & $OnSelectDevice }.GetNewClosure()) }
 
-    $miLogs   = New-Object System.Windows.Forms.ToolStripMenuItem 'Open logs folder'
+    $miLogs   = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'OpenLogsFolder')
     if ($OnOpenLogs) { $miLogs.Add_Click({ & $OnOpenLogs }.GetNewClosure()) }
 
-    $miCfg    = New-Object System.Windows.Forms.ToolStripMenuItem 'Open config file'
+    $miCfg    = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'OpenConfigFile')
     if ($OnOpenConfig) { $miCfg.Add_Click({ & $OnOpenConfig }.GetNewClosure()) }
 
     $miSep3   = New-Object System.Windows.Forms.ToolStripSeparator
 
-    $miExit   = New-Object System.Windows.Forms.ToolStripMenuItem 'Exit'
+    $miExit   = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'Exit')
     if ($OnExit) { $miExit.Add_Click({ & $OnExit }.GetNewClosure()) }
 
     [void]$menu.Items.AddRange(@($miStatus, $miDevice, $miSep1, $miToggle, $miLock, $miSep2, $miSelect, $miLogs, $miCfg, $miSep3, $miExit))
@@ -135,16 +135,16 @@ function Update-TrayStatus {
     $script:Tray.Notify.Icon = New-TrayIconImage -Color $color
     try { if ($oldIcon) { $oldIcon.Dispose() } } catch { }
 
-    $label = "Status: $State"
+    $label = "$((Get-LocaleString 'Status')): $State"
     if ($ExtraText) { $label += " ($ExtraText)" }
     $script:Tray.StatusItem.Text = $label
 
     if ($DeviceName) {
-        $script:Tray.DeviceItem.Text = "Device: $DeviceName"
+        $script:Tray.DeviceItem.Text = "$((Get-LocaleString 'Device')): $DeviceName"
     }
 
     $tip = $label
-    if ($DeviceName) { $tip = "Proximity Lock - $DeviceName`n$label" }
+    if ($DeviceName) { $tip = "$((Get-LocaleString 'ProximityLock')) - $DeviceName`n$label" }
     # NotifyIcon.Text has 63-char limit historically; modern Windows allows 127
     if ($tip.Length -gt 127) { $tip = $tip.Substring(0, 127) }
     $script:Tray.Notify.Text = $tip
@@ -153,7 +153,7 @@ function Update-TrayStatus {
 function Update-TrayToggleLabel {
     param([Parameter(Mandatory)] [bool] $Enabled)
     if (-not $script:Tray) { return }
-    $script:Tray.ToggleItem.Text = if ($Enabled) { 'Disable monitoring' } else { 'Enable monitoring' }
+    $script:Tray.ToggleItem.Text = if ($Enabled) { Get-LocaleString 'DisableMonitoring' } else { Get-LocaleString 'EnableMonitoring' }
 }
 
 function Show-TrayBalloon {

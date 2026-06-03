@@ -24,6 +24,7 @@ else { $AppRoot = (Get-Location).Path }
 if (-not $ConfigPath) { $ConfigPath = Join-Path $AppRoot 'config.json' }
 
 # --- Dot-source modules ---
+. (Join-Path $AppRoot 'lib\I18n.ps1')
 . (Join-Path $AppRoot 'lib\Logger.ps1')
 . (Join-Path $AppRoot 'lib\Config.ps1')
 . (Join-Path $AppRoot 'lib\WinRT.ps1')
@@ -50,26 +51,26 @@ function Test-HasInteractiveConsole {
 function Select-DeviceCli {
     param([Parameter(Mandatory)] $Devices)
     Write-Host ""
-    Write-Host "=== Select target Bluetooth device ===" -ForegroundColor Cyan
-    Write-Host "Paired devices visible to this machine:"
+    Write-Host (Get-LocaleString 'CliHeader') -ForegroundColor Cyan
+    Write-Host (Get-LocaleString 'CliVisible')
     for ($i = 0; $i -lt $Devices.Count; $i++) {
         $d = $Devices[$i]
         Write-Host ("  [{0}] {1}   ({2})" -f ($i + 1), $d.Name, $d.Kind)
     }
     while ($true) {
-        $sel = Read-Host "Enter number (1-$($Devices.Count))"
+        $sel = Read-Host (Get-LocaleString 'CliPrompt' $Devices.Count)
         if ($sel -match '^\d+$') {
             $n = [int]$sel
             if ($n -ge 1 -and $n -le $Devices.Count) { return $Devices[$n - 1] }
         }
-        Write-Host "Invalid input, try again." -ForegroundColor Yellow
+        Write-Host (Get-LocaleString 'CliInvalid') -ForegroundColor Yellow
     }
 }
 
 function Select-DeviceForm {
     param([Parameter(Mandatory)] $Devices)
     $form = New-Object System.Windows.Forms.Form
-    $form.Text          = 'Proximity Lock - Select Device'
+    $form.Text          = Get-LocaleString 'SelectDeviceTitle'
     $form.Size          = New-Object System.Drawing.Size 460, 360
     $form.StartPosition = 'CenterScreen'
     $form.FormBorderStyle = 'FixedDialog'
@@ -78,7 +79,7 @@ function Select-DeviceForm {
     $form.TopMost       = $true
 
     $label = New-Object System.Windows.Forms.Label
-    $label.Text     = 'Choose a paired Bluetooth device to use as your trusted key:'
+    $label.Text     = Get-LocaleString 'SelectDeviceLabel'
     $label.AutoSize = $true
     $label.Location = New-Object System.Drawing.Point 12, 12
     $form.Controls.Add($label)
@@ -93,7 +94,7 @@ function Select-DeviceForm {
     $form.Controls.Add($list)
 
     $btnOk = New-Object System.Windows.Forms.Button
-    $btnOk.Text     = 'OK'
+    $btnOk.Text     = Get-LocaleString 'BtnOk'
     $btnOk.Location = New-Object System.Drawing.Point 256, 275
     $btnOk.Size     = New-Object System.Drawing.Size 80, 28
     $btnOk.DialogResult = [System.Windows.Forms.DialogResult]::OK
@@ -101,7 +102,7 @@ function Select-DeviceForm {
     $form.Controls.Add($btnOk)
 
     $btnCancel = New-Object System.Windows.Forms.Button
-    $btnCancel.Text     = 'Cancel'
+    $btnCancel.Text     = Get-LocaleString 'BtnCancel'
     $btnCancel.Location = New-Object System.Drawing.Point 350, 275
     $btnCancel.Size     = New-Object System.Drawing.Size 80, 28
     $btnCancel.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
@@ -117,10 +118,10 @@ function Select-DeviceForm {
 function Invoke-FirstRunSetup {
     param([Parameter(Mandatory)][string] $ConfigPath)
 
-    Write-Host "First run: no device selected yet. Enumerating paired devices..." -ForegroundColor Cyan
+    Write-Host (Get-LocaleString 'FirstRunSetup') -ForegroundColor Cyan
     $devs = @(Get-PairedBluetoothDevices)
     if ($devs.Count -eq 0) {
-        throw "No paired Bluetooth devices found. Pair your phone/watch in Windows Settings first, then run again."
+        throw (Get-LocaleString 'NoDevicesErr')
     }
     $chosen = $null
     if (Test-HasInteractiveConsole) {
@@ -129,7 +130,7 @@ function Invoke-FirstRunSetup {
         $chosen = Select-DeviceForm -Devices $devs
         if (-not $chosen) { throw "Device selection cancelled" }
     }
-    Write-Host ("Selected: {0} ({1})" -f $chosen.Name, $chosen.Kind) -ForegroundColor Green
+    Write-Host (Get-LocaleString 'SelectedDevice' @($chosen.Name, $chosen.Kind)) -ForegroundColor Green
 
     $cfg = Get-DefaultConfig
     $cfg.device.id               = $chosen.Id
@@ -137,7 +138,7 @@ function Invoke-FirstRunSetup {
     $cfg.device.kind             = $chosen.Kind
     $cfg.device.bluetoothAddress = if ($chosen.BluetoothAddress) { [string]$chosen.BluetoothAddress } else { $null }
     Write-Config -Path $ConfigPath -Config $cfg
-    Write-Host "Saved config: $ConfigPath" -ForegroundColor Green
+    Write-Host (Get-LocaleString 'SavedConfig' $ConfigPath) -ForegroundColor Green
     return $cfg
 }
 
@@ -234,6 +235,10 @@ function Start-Countdown {
     $script:App.CountdownRemain = $delay
     Set-AppState 'Countdown'
     Write-Log INFO 'Countdown' "Starting ${delay}s countdown. Reason: $Reason"
+
+    if (-not $NoTray) {
+        Show-TrayBalloon -Title (Get-LocaleString 'LockWarningTitle') -Message (Get-LocaleString 'LockWarningMessage' @($Reason, $delay)) -Kind Warning -TimeoutMs 5000
+    }
 
     if ($script:App.CountdownTimer) { $script:App.CountdownTimer.Stop() }
     $timer = New-Object System.Windows.Forms.Timer
@@ -491,6 +496,9 @@ function Invoke-PollTick {
                 Set-AppState 'Monitoring'
             }
         }
+        # Force garbage collection to prevent WinRT handle/memory buildup over long runtimes
+        [System.GC]::Collect()
+        [System.GC]::WaitForPendingFinalizers()
     } catch {
         Write-Log ERROR 'Poll' "Poll tick failed: $($_.Exception.Message)"
         Set-AppState 'Error'
@@ -646,7 +654,7 @@ function OnMenu-ToggleEnabled {
         Set-AppState 'Disabled'
         if (-not $NoTray) {
             Update-TrayToggleLabel -Enabled $false
-            Show-TrayBalloon -Title 'Proximity Lock' -Message 'Monitoring disabled.' -Kind Info
+            Show-TrayBalloon -Title (Get-LocaleString 'ProximityLock') -Message (Get-LocaleString 'MonitoringDisabled') -Kind Info
         }
     } else {
         Write-Log INFO 'App' "User enabled monitoring"
@@ -654,7 +662,7 @@ function OnMenu-ToggleEnabled {
         Start-Monitoring
         if (-not $NoTray) {
             Update-TrayToggleLabel -Enabled $true
-            Show-TrayBalloon -Title 'Proximity Lock' -Message 'Monitoring enabled.' -Kind Info
+            Show-TrayBalloon -Title (Get-LocaleString 'ProximityLock') -Message (Get-LocaleString 'MonitoringEnabled') -Kind Info
         }
     }
 }
@@ -674,7 +682,7 @@ function OnMenu-SelectDevice {
     try {
         $devs = @(Get-PairedBluetoothDevices)
         if ($devs.Count -eq 0) {
-            Show-TrayBalloon -Title 'Proximity Lock' -Message 'No paired devices found.' -Kind Warning
+            Show-TrayBalloon -Title (Get-LocaleString 'ProximityLock') -Message (Get-LocaleString 'NoPairedDevices') -Kind Warning
             return
         }
         $chosen = Select-DeviceForm -Devices $devs
@@ -687,7 +695,7 @@ function OnMenu-SelectDevice {
         $script:App.Config.device.bluetoothAddress = if ($chosen.BluetoothAddress) { [string]$chosen.BluetoothAddress } else { $null }
         Write-Config -Path $ConfigPath -Config $script:App.Config
         if ($script:App.Enabled) { Start-Monitoring }
-        Show-TrayBalloon -Title 'Proximity Lock' -Message "Now tracking: $($chosen.Name)" -Kind Info
+        Show-TrayBalloon -Title (Get-LocaleString 'ProximityLock') -Message (Get-LocaleString 'NowTracking' $chosen.Name) -Kind Info
     } catch {
         Write-Log ERROR 'App' "Select device failed: $($_.Exception.Message)"
     }
@@ -703,10 +711,10 @@ function OnMenu-Exit {
 # ============================================================================
 
 if (-not (Test-AndAcquireSingleInstance)) {
-    $msg = 'Proximity Lock is already running in this session.'
+    $msg = Get-LocaleString 'AlreadyRunning'
     Write-Host $msg -ForegroundColor Yellow
     if (-not $NoTray) {
-        try { [System.Windows.Forms.MessageBox]::Show($msg, 'Proximity Lock', 'OK', 'Information') | Out-Null } catch { }
+        try { [System.Windows.Forms.MessageBox]::Show($msg, (Get-LocaleString 'ProximityLock'), 'OK', 'Information') | Out-Null } catch { }
     }
     exit 0
 }
