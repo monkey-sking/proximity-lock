@@ -1,4 +1,4 @@
-# I18n.ps1 -- Simple localization module for Proximity Lock
+﻿# I18n.ps1 -- Simple localization module for Proximity Lock
 
 $script:LocStrings = @{
     'en-US' = @{

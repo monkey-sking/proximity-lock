@@ -1,4 +1,4 @@
-# ProximityLock.ps1 -- Main entry
+﻿# ProximityLock.ps1 -- Main entry
 #
 # Modern Windows Bluetooth proximity auto-lock.
 #
@@ -213,7 +213,7 @@ function Set-AppState {
 function Update-ConnectionTracking {
     # Update ConnectedSince based on a fresh snapshot and return whether the
     # link is stable enough to trust as "device present". A single successful
-    # probe on a flaky classic-BT link doesn't count — we require the connect
+    # probe on a flaky classic-BT link doesn't count 鈥?we require the connect
     # streak to last reconnectStableSeconds before clearing sustain timers or
     # cancelling a countdown.
     param([Parameter(Mandatory)] $Snapshot)
@@ -416,7 +416,7 @@ function Invoke-PollTick {
         $reason = $null
 
         # Update connect-streak tracker. A single successful probe on a
-        # flaky classic-BT link does NOT clear sustain timers — we need
+        # flaky classic-BT link does NOT clear sustain timers 鈥?we need
         # reconnectStableSeconds of continuous connection to count.
         $stableConnected = Update-ConnectionTracking -Snapshot $snap
 
@@ -472,7 +472,7 @@ function Invoke-PollTick {
                 if ($idleSec -ne $null -and $idleSec -lt $requireIdle) {
                     Write-Log INFO 'Poll' ("Lock suppressed by user activity (idle={0:N0}s < {1}s). Would-be reason: {2}" -f $idleSec, $requireIdle, $reason)
                     $shouldTrigger = $false
-                    # Don't reset DisconnectedSince — if BT stays away, the moment
+                    # Don't reset DisconnectedSince 鈥?if BT stays away, the moment
                     # user goes idle we want to lock immediately, not re-debounce.
                 }
             }
@@ -754,3 +754,4 @@ try {
     }
     Write-Log INFO 'App' "==== Stopped ===="
 }
+

@@ -1,4 +1,4 @@
-# Tray.ps1 -- System tray (NotifyIcon) with menu and status updates
+﻿# Tray.ps1 -- System tray (NotifyIcon) with menu and status updates
 
 Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
 Add-Type -AssemblyName System.Drawing      -ErrorAction Stop
@@ -178,3 +178,4 @@ function Dispose-Tray {
     try { $script:Tray.Notify.Dispose() } catch { }
     $script:Tray = $null
 }
+
