@@ -35,6 +35,14 @@ function Invoke-WorkstationLock {
     [bool] $ok = [ProximityLock.Native]::LockWorkStation()
     if ($ok) {
         Write-Log INFO 'Lock' "LockWorkStation() invoked successfully"
+        try {
+            # Give Windows a brief moment to transition to lock state, then turn off monitor
+            Start-Sleep -Milliseconds 500
+            [void][ProximityLock.WakeNative]::SendMessage([IntPtr]0xffff, 0x0112, [IntPtr]0xF170, [IntPtr]2)
+            Write-Log INFO 'Lock' "Monitor screen turn-off command sent successfully"
+        } catch {
+            Write-Log WARN 'Lock' "Failed to turn off monitor: $($_.Exception.Message)"
+        }
     } else {
         $err = [System.Runtime.InteropServices.Marshal]::GetLastWin32Error()
         Write-Log ERROR 'Lock' "LockWorkStation() failed (Win32 error $err)"
