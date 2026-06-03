@@ -1,4 +1,4 @@
-# Tray.ps1 -- System tray (NotifyIcon) with menu and status updates
+﻿# Tray.ps1 -- System tray (NotifyIcon) with menu and status updates
 
 Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
 Add-Type -AssemblyName System.Drawing      -ErrorAction Stop
@@ -50,6 +50,7 @@ function Initialize-Tray {
         Callbacks (script blocks):
           -OnToggleEnabled     called when user clicks Enable/Disable
           -OnLockNow           called when user clicks Lock now
+          -OnToggleAutoStart   called when user toggles run on startup (Checked status passed as argument)
           -OnOpenLogs          called when user clicks Open logs
           -OnOpenConfig        called when user clicks Open config
           -OnSelectDevice      called when user clicks Select device...
@@ -58,6 +59,7 @@ function Initialize-Tray {
     param(
         [scriptblock] $OnToggleEnabled,
         [scriptblock] $OnLockNow,
+        [scriptblock] $OnToggleAutoStart,
         [scriptblock] $OnOpenLogs,
         [scriptblock] $OnOpenConfig,
         [scriptblock] $OnSelectDevice,
@@ -85,6 +87,15 @@ function Initialize-Tray {
     $miLock   = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'LockNow')
     if ($OnLockNow) { $miLock.Add_Click({ & $OnLockNow }.GetNewClosure()) }
 
+    $miAutoStart = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'StartOnLogon')
+    $miAutoStart.CheckOnClick = $true
+    if ($OnToggleAutoStart) {
+        $miAutoStart.Add_Click({
+            param($sender, $e)
+            & $OnToggleAutoStart $sender.Checked
+        }.GetNewClosure())
+    }
+
     $miSep2   = New-Object System.Windows.Forms.ToolStripSeparator
 
     $miSelect = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'SelectDeviceMenu')
@@ -101,15 +112,16 @@ function Initialize-Tray {
     $miExit   = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'Exit')
     if ($OnExit) { $miExit.Add_Click({ & $OnExit }.GetNewClosure()) }
 
-    [void]$menu.Items.AddRange(@($miStatus, $miDevice, $miSep1, $miToggle, $miLock, $miSep2, $miSelect, $miLogs, $miCfg, $miSep3, $miExit))
+    [void]$menu.Items.AddRange(@($miStatus, $miDevice, $miSep1, $miToggle, $miLock, $miAutoStart, $miSep2, $miSelect, $miLogs, $miCfg, $miSep3, $miExit))
     $notify.ContextMenuStrip = $menu
 
     $script:Tray = [pscustomobject]@{
-        Notify     = $notify
-        Menu       = $menu
-        StatusItem = $miStatus
-        DeviceItem = $miDevice
-        ToggleItem = $miToggle
+        Notify        = $notify
+        Menu          = $menu
+        StatusItem    = $miStatus
+        DeviceItem    = $miDevice
+        ToggleItem    = $miToggle
+        AutoStartItem = $miAutoStart
     }
     return $script:Tray
 }
@@ -182,5 +194,11 @@ function Dispose-Tray {
     try { $script:Tray.Notify.Visible = $false } catch { }
     try { $script:Tray.Notify.Dispose() } catch { }
     $script:Tray = $null
+}
+
+function Update-TrayAutoStartCheck {
+    param([Parameter(Mandatory)] [bool] $Checked)
+    if (-not $script:Tray) { return }
+    $script:Tray.AutoStartItem.Checked = $Checked
 }
 

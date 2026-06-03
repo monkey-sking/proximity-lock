@@ -616,6 +616,33 @@ function Open-Path {
     }
 }
 
+function Get-AutoStartRegistered {
+    $RegPath   = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
+    $ValueName = 'ProximityLock'
+    $val = (Get-ItemProperty -LiteralPath $RegPath -Name $ValueName -ErrorAction SilentlyContinue).$ValueName
+    return [bool]$val
+}
+
+function Set-AutoStartRegistered {
+    param([bool] $Enabled)
+    $RegPath   = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
+    $ValueName = 'ProximityLock'
+    if ($Enabled) {
+        $Launcher  = Join-Path $script:App.AppRoot 'Start-ProximityLock.vbs'
+        $cmd = "wscript.exe `"$Launcher`""
+        if (-not (Test-Path -LiteralPath $RegPath)) {
+            New-Item -Path $RegPath -Force | Out-Null
+        }
+        Set-ItemProperty -LiteralPath $RegPath -Name $ValueName -Value $cmd
+        Write-Log INFO 'App' "Registered auto-start: $cmd"
+    } else {
+        if (Get-ItemProperty -LiteralPath $RegPath -Name $ValueName -ErrorAction SilentlyContinue) {
+            Remove-ItemProperty -LiteralPath $RegPath -Name $ValueName
+            Write-Log INFO 'App' "Unregistered auto-start"
+        }
+    }
+}
+
 function Initialize-App {
     # 1. Load or create config
     if (-not (Test-ConfigExists -Path $ConfigPath) -or $ResetDevice) {
@@ -649,12 +676,14 @@ function Initialize-App {
         Initialize-Tray `
             -OnToggleEnabled { OnMenu-ToggleEnabled } `
             -OnLockNow       { OnMenu-LockNow } `
+            -OnToggleAutoStart { param($checked) OnMenu-ToggleAutoStart $checked } `
             -OnOpenLogs      { OnMenu-OpenLogs } `
             -OnOpenConfig    { OnMenu-OpenConfig } `
             -OnSelectDevice  { OnMenu-SelectDevice } `
             -OnExit          { OnMenu-Exit } | Out-Null
         Update-TrayToggleLabel -Enabled $true
         Update-TrayStatus -State 'Idle' -DeviceName $cfg.device.name
+        Update-TrayAutoStartCheck -Checked (Get-AutoStartRegistered)
     }
 
     # 4. Session events
@@ -689,6 +718,15 @@ function Initialize-App {
 }
 
 # --- Menu handlers ---
+function OnMenu-ToggleAutoStart {
+    param([bool] $Checked)
+    try {
+        Set-AutoStartRegistered -Enabled $Checked
+    } catch {
+        Write-Log ERROR 'App' "Toggle auto-start failed: $($_.Exception.Message)"
+    }
+}
+
 function OnMenu-ToggleEnabled {
     if ($script:App.Enabled) {
         Write-Log INFO 'App' "User disabled monitoring"
