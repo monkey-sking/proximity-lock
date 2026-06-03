@@ -187,6 +187,7 @@ $script:App = [pscustomobject]@{
     LastSnapshot      = $null
     ProbeFailureCount = 0                # consecutive failed classic probes; reset on success
     ExitRequested     = $false
+    ScreenWakeSent    = $false
 }
 
 function Set-GracePeriod {
@@ -203,6 +204,9 @@ function Set-AppState {
     if ($script:App.State -eq $NewState) { return }
     Write-Log INFO 'State' ("{0} -> {1}" -f $script:App.State, $NewState)
     $script:App.State = $NewState
+    if ($NewState -eq 'Locked') {
+        $script:App.ScreenWakeSent = $false
+    }
     if (-not $NoTray) {
         $devName = if ($script:App.Config.device.name) { $script:App.Config.device.name } else { '(none)' }
         $extra   = if ($NewState -eq 'Countdown') { "$($script:App.CountdownRemain)s" } else { '' }
@@ -375,7 +379,34 @@ function Invoke-UnlockHook {
 function Invoke-PollTick {
     if ($script:PollTickActive) { return }
     if (-not $script:App.Enabled) { return }
-    if ($script:App.State -in @('Countdown','Locked')) { return }   # countdown handles its own polling; Locked waits for SessionUnlock
+    if ($script:App.State -eq 'Countdown') { return }   # countdown handles its own polling
+
+    # If Locked, we only poll to detect reconnection and wake screen
+    if ($script:App.State -eq 'Locked') {
+        if ($script:App.ScreenWakeSent) { return }
+        $script:PollTickActive = $true
+        try {
+            $useProbe = ([bool]$script:App.Config.monitor.activeProbeEnabled)
+            $snap = Get-BluetoothStatusSnapshot -ActiveProbe $useProbe
+            $script:App.LastSnapshot = $snap
+            $stableConnected = Update-ConnectionTracking -Snapshot $snap
+            
+            $recovered = $stableConnected
+            if ($script:App.Config.monitor.useRssi -and $snap.Rssi -ne $null `
+                    -and $snap.Rssi -ge [int]$script:App.Config.monitor.rssiThresholdDbm) {
+                $recovered = $true
+            }
+            if ($recovered) {
+                Invoke-ScreenWake
+                $script:App.ScreenWakeSent = $true
+            }
+        } catch {
+            Write-Log ERROR 'Poll' "Locked poll tick failed: $($_.Exception.Message)"
+        } finally {
+            $script:PollTickActive = $false
+        }
+        return
+    }
 
     $script:PollTickActive = $true
     try {
@@ -638,6 +669,7 @@ function Initialize-App {
             $script:App.RssiBelowSince    = $null
             $script:App.ProbeFailureCount = 0
             $script:App.ConnectedSince    = $null
+            $script:App.ScreenWakeSent    = $false
             Set-GracePeriod -Reason 'workstation unlocked'
             # Resume monitoring after unlock
             if ($script:App.Enabled) {

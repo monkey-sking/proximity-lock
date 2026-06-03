@@ -1,4 +1,4 @@
-# Lock.ps1 -- LockWorkStation P/Invoke + hook script runner
+﻿# Lock.ps1 -- LockWorkStation P/Invoke + hook script runner
 
 # Requires: Logger.ps1 dot-sourced beforehand
 
@@ -10,6 +10,22 @@ namespace ProximityLock {
     public static class Native {
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool LockWorkStation();
+    }
+}
+"@
+}
+
+if (-not ([System.Management.Automation.PSTypeName]'ProximityLock.WakeNative').Type) {
+    Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+namespace ProximityLock {
+    public static class WakeNative {
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll")]
+        public static extern void mouse_event(uint dwFlags, int dx, int dy, uint dwData, UIntPtr dwExtraInfo);
     }
 }
 "@
@@ -128,5 +144,25 @@ function Invoke-HookScript {
         TimedOut = $timedOut
         StdOut   = $stdOut
         StdErr   = $stdErr
+    }
+}
+
+function Invoke-ScreenWake {
+    Write-Log INFO 'Lock' "Waking up monitor screen"
+    try {
+        # 1. Send monitor power command to turn it ON
+        # HWND_BROADCAST = 0xffff
+        # WM_SYSCOMMAND = 0x0112
+        # SC_MONITORPOWER = 0xF170
+        # -1 = ON
+        [void][ProximityLock.WakeNative]::SendMessage([IntPtr]0xffff, 0x0112, [IntPtr]0xF170, [IntPtr]-1)
+
+        # 2. Simulate mouse movement (move by 1 pixel and move back)
+        # MOUSEEVENTF_MOVE = 0x0001
+        [ProximityLock.WakeNative]::mouse_event(1, 1, 1, 0, [UIntPtr]::Zero)
+        [ProximityLock.WakeNative]::mouse_event(1, -1, -1, 0, [UIntPtr]::Zero)
+        Write-Log INFO 'Lock' "Screen wake commands sent successfully"
+    } catch {
+        Write-Log ERROR 'Lock' "Failed to wake screen: $($_.Exception.Message)"
     }
 }
