@@ -35,7 +35,7 @@ $script:LocStrings = @{
         'AlreadyRunning'      = 'Proximity Lock is already running in this session.'
     }
     'zh-CN' = @{
-        'SelectDeviceTitle'   = '蓝牙靠近锁屏 - 选择设备'
+        'SelectDeviceTitle'   = '蓝牙远离自动锁 - 选择设备'
         'SelectDeviceLabel'   = '选择一个已配对的蓝牙设备作为您的信任钥匙：'
         'BtnOk'               = '确定'
         'BtnCancel'           = '取消'
@@ -50,12 +50,12 @@ $script:LocStrings = @{
         'Exit'                = '退出'
         'Status'              = '状态'
         'Device'              = '设备'
-        'ProximityLock'       = '蓝牙靠近锁屏'
+        'ProximityLock'       = '蓝牙远离自动锁'
         'MonitoringDisabled'  = '监控已禁用。'
         'MonitoringEnabled'   = '监控已启用。'
         'NoPairedDevices'     = '未找到已配对的设备。'
         'NowTracking'         = '当前跟踪: {0}'
-        'LockWarningTitle'    = '靠近锁屏警告'
+        'LockWarningTitle'    = '远离锁屏警告'
         'LockWarningMessage'  = '设备已断开 ({0})。工作站将在 {1} 秒后锁定。'
         'CliHeader'           = '=== 选择目标蓝牙设备 ==='
         'CliVisible'          = '当前机器可见的已配对设备：'
