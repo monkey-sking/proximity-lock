@@ -193,10 +193,15 @@ function Invoke-ClassicActiveProbe {
         [int] $TimeoutMs = 6000
     )
     try {
-        [void](Await `
+        $res = Await `
             ($Device.GetRfcommServicesAsync([Windows.Devices.Bluetooth.BluetoothCacheMode]::Uncached)) `
-            ([Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult]) $TimeoutMs)
-        return $true
+            ([Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult]) $TimeoutMs
+        if ($res -and $res.Error -eq [Windows.Devices.Bluetooth.BluetoothError]::Success) {
+            return $true
+        }
+        $errStr = if ($res) { $res.Error.ToString() } else { "null result" }
+        Write-Log DEBUG 'Bluetooth' "Active probe returned Bluetooth error: $errStr"
+        return $false
     } catch {
         Write-Log DEBUG 'Bluetooth' "Active probe failed: $($_.Exception.Message)"
         return $false
