@@ -1,4 +1,6 @@
 ﻿# ProximityLock.ps1 -- Main entry
+# Version: 1.0.0
+# Last Modified: 2026-06-08
 #
 # Modern Windows Bluetooth proximity auto-lock.
 #
@@ -668,7 +670,7 @@ function Initialize-App {
         -KeepFiles ([int]$cfg.logging.keepFiles) `
         -EchoToConsole ([bool]$cfg.logging.echoToConsole)
 
-    Write-Log INFO 'App' "==== Proximity Lock starting (root=$AppRoot, config=$ConfigPath) ===="
+    Write-Log INFO 'App' "==== Proximity Lock v1.0.0 starting (root=$AppRoot, config=$ConfigPath) ===="
     Write-Log INFO 'App' ("Target device: {0} ({1})" -f $cfg.device.name, $cfg.device.kind)
 
     # 3. Tray

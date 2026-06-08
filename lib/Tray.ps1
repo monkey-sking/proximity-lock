@@ -109,10 +109,13 @@ function Initialize-Tray {
 
     $miSep3   = New-Object System.Windows.Forms.ToolStripSeparator
 
+    $miVersion = New-Object System.Windows.Forms.ToolStripMenuItem "v1.0.0"
+    $miVersion.Enabled = $false  # 灰色显示，不可点击
+
     $miExit   = New-Object System.Windows.Forms.ToolStripMenuItem (Get-LocaleString 'Exit')
     if ($OnExit) { $miExit.Add_Click({ & $OnExit }.GetNewClosure()) }
 
-    [void]$menu.Items.AddRange(@($miStatus, $miDevice, $miSep1, $miToggle, $miLock, $miAutoStart, $miSep2, $miSelect, $miLogs, $miCfg, $miSep3, $miExit))
+    [void]$menu.Items.AddRange(@($miStatus, $miDevice, $miSep1, $miToggle, $miLock, $miAutoStart, $miSep2, $miSelect, $miLogs, $miCfg, $miSep3, $miVersion, $miExit))
     $notify.ContextMenuStrip = $menu
 
     $script:Tray = [pscustomobject]@{
