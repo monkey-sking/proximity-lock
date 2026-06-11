@@ -3,6 +3,16 @@
 Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
 Add-Type -AssemblyName System.Drawing      -ErrorAction Stop
 
+# P/Invoke for DestroyIcon to prevent GDI handle leak
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public class IconHelper {
+    [DllImport("user32.dll", SetLastError=true)]
+    public static extern bool DestroyIcon(IntPtr hIcon);
+}
+'@ -ErrorAction SilentlyContinue
+
 $script:Tray = $null
 
 function New-TrayIconImage {
@@ -40,7 +50,9 @@ function New-TrayIconImage {
     $brush.Dispose()
 
     $hicon = $bmp.GetHicon()
-    $icon  = [System.Drawing.Icon]::FromHandle($hicon)
+    $icon  = [System.Drawing.Icon]::FromHandle($hicon).Clone()
+    $bmp.Dispose()
+    [IconHelper]::DestroyIcon($hicon) | Out-Null
     return $icon
 }
 
