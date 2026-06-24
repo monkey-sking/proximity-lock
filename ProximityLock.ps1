@@ -1,4 +1,4 @@
-﻿# ProximityLock.ps1 -- Main entry
+# ProximityLock.ps1 -- Main entry
 # Version: 1.0.0
 # Last Modified: 2026-06-08
 #
@@ -235,6 +235,19 @@ function Update-ConnectionTracking {
     return $false
 }
 
+function Stop-Countdown {
+    if ($script:App.CountdownTimer) {
+        try {
+            $script:App.CountdownTimer.Stop()
+            $script:App.CountdownTimer.Dispose()
+        } catch {
+            Write-Log ERROR 'Countdown' "Failed to stop/dispose CountdownTimer: $($_.Exception.Message)"
+        }
+        $script:App.CountdownTimer = $null
+        Write-Log DEBUG 'Countdown' "Countdown timer stopped and disposed"
+    }
+}
+
 function Start-Countdown {
     param([string] $Reason)
     $delay = [int]$script:App.Config.lock.delaySeconds
@@ -247,7 +260,7 @@ function Start-Countdown {
         Show-TrayBalloon -Title (Get-LocaleString 'LockWarningTitle') -Message (Get-LocaleString 'LockWarningMessage' @($Reason, $delay)) -Kind Warning -TimeoutMs 5000
     }
 
-    if ($script:App.CountdownTimer) { $script:App.CountdownTimer.Stop() }
+    Stop-Countdown
     $timer = New-Object System.Windows.Forms.Timer
     $timer.Interval = 1000
     $timer.Add_Tick({
@@ -260,7 +273,7 @@ function Start-Countdown {
             if ($requireIdle -gt 0) {
                 $idleSec = Get-IdleSeconds
                 if ($idleSec -ne $null -and $idleSec -lt $requireIdle) {
-                    $script:App.CountdownTimer.Stop()
+                    Stop-Countdown
                     Write-Log WARN 'Countdown' ("User activity during countdown (idle={0:N0}s); cancelling lock" -f $idleSec)
                     Set-AppState 'Monitoring'
                     return
@@ -282,7 +295,7 @@ function Start-Countdown {
                     $stillLost = $false
                 }
                 if (-not $stillLost) {
-                    $script:App.CountdownTimer.Stop()
+                    Stop-Countdown
                     $script:App.RssiBelowSince    = $null
                     $script:App.DisconnectedSince = $null
                     Write-Log WARN 'Countdown' "Device reconnected/signal recovered during countdown; cancelling lock"
@@ -297,8 +310,13 @@ function Start-Countdown {
             }
 
             if ($script:App.CountdownRemain -le 0) {
-                $script:App.CountdownTimer.Stop()
-                Invoke-LockSequence
+                Stop-Countdown
+                # Double-check state: pending WM_TIMER messages in the WinForms
+                # message queue can fire this Tick even after Stop() was called.
+                # Only proceed if we are still in Countdown state.
+                if ($script:App.State -eq 'Countdown') {
+                    Invoke-LockSequence
+                }
             }
         } catch {
             Write-Log ERROR 'Countdown' "Tick handler failed: $($_.Exception.Message)"
@@ -359,10 +377,20 @@ function Clear-HookJobs {
 }
 
 function Invoke-LockSequence {
+    # Re-entry guard: Tick messages pending in the WinForms queue, or the
+    # SessionLock callback, can call us more than once. If we are already
+    # Locked there is nothing left to do.
+    if ($script:App.State -eq 'Locked') {
+        Write-Log WARN 'Lock' "Invoke-LockSequence called but already Locked; skipping"
+        return
+    }
+
     Write-Log INFO 'Lock' "Countdown elapsed, executing lock sequence"
-    # Lock first, then run hook in parallel (hook may take a while)
-    [void](Invoke-WorkstationLock)
+    # Set state BEFORE calling LockWorkStation so that the SessionLock event
+    # callback (which also calls Set-AppState 'Locked') is a no-op rather than
+    # a re-entrant trigger.
     Set-AppState 'Locked'
+    [void](Invoke-WorkstationLock)
 
     $hook = $script:App.Config.hooks.onLock
     $resolved = Resolve-PathRelative -BasePath $script:App.AppRoot -InputPath $hook
@@ -534,7 +562,11 @@ function Invoke-PollTick {
         if ($shouldTrigger) {
             Start-Countdown -Reason $reason
         } else {
-            if ($script:App.State -ne 'Monitoring') {
+            # Only reset to Monitoring if we're in a transitional state (e.g.
+            # lingering Countdown that was cancelled). Do NOT touch Locked — the
+            # workstation was locked externally and PollTick has no business
+            # pulling it back into Monitoring.
+            if ($script:App.State -notin @('Monitoring', 'Locked')) {
                 Set-AppState 'Monitoring'
             }
         }
@@ -594,11 +626,7 @@ function Stop-Monitoring {
         $script:App.PollTimer.Dispose()
         $script:App.PollTimer = $null
     }
-    if ($script:App.CountdownTimer) {
-        $script:App.CountdownTimer.Stop()
-        $script:App.CountdownTimer.Dispose()
-        $script:App.CountdownTimer = $null
-    }
+    Stop-Countdown
     $script:App.DisconnectedSince = $null
     $script:App.RssiBelowSince    = $null
     $script:App.GraceUntil        = $null
@@ -690,10 +718,15 @@ function Initialize-App {
 
     # 4. Session events
     Register-SessionEvents `
-        -OnLock   { Write-Log INFO 'App' "Workstation locked (by us or otherwise)"; Set-AppState 'Locked' } `
+        -OnLock   {
+            Write-Log INFO 'App' "Workstation locked (by us or otherwise)"
+            Stop-Countdown
+            Set-AppState 'Locked'
+        } `
         -OnUnlock {
             Write-Log INFO 'App' "Workstation unlocked"
             Invoke-UnlockHook
+            Stop-Countdown
             # Reset sustain timers so a stale "disconnected" reading from before
             # the lock doesn't immediately re-trigger after unlock.
             $script:App.DisconnectedSince = $null
