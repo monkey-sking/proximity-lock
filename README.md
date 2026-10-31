@@ -1,5 +1,9 @@
 ﻿# Proximity Lock
 
+<!-- badges:start -->
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](https://github.com/monkey-sking/proximity-lock/blob/main/LICENSE) [![Last commit](https://img.shields.io/github/last-commit/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/commits/main) [![PowerShell](https://img.shields.io/github/languages/top/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/search?l=PowerShell) [![Stars](https://img.shields.io/github/stars/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/stargazers) [![views](https://hits.sh/github.com/monkey-sking/proximity-lock.svg?style=flat-square&label=views&color=0e75b6)](https://github.com/monkey-sking/proximity-lock) [![Forks](https://img.shields.io/github/forks/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/network/members)
+<!-- badges:end -->
+
 **Language**: **English** · [中文](README.zh-CN.md)
 
 A modern Windows Bluetooth proximity auto-lock built on PowerShell 5.1 + WinRT — the spiritual successor to BTProx.
@@ -16,10 +20,6 @@ No runtime to install — the system-bundled PowerShell 5.1 is enough. Drop the 
 
 ```powershell
 # Option 1: debug launch with a console window (first run picks the target device interactively)
-
-<!-- badges:start -->
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](https://github.com/monkey-sking/proximity-lock/blob/main/LICENSE) [![Last commit](https://img.shields.io/github/last-commit/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/commits/main) [![PowerShell](https://img.shields.io/github/languages/top/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/search?l=PowerShell) [![Stars](https://img.shields.io/github/stars/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/stargazers) [![views](https://hits.sh/github.com/monkey-sking/proximity-lock.svg?style=flat-square&label=views&color=0e75b6)](https://github.com/monkey-sking/proximity-lock) [![Forks](https://img.shields.io/github/forks/monkey-sking/proximity-lock?style=flat-square)](https://github.com/monkey-sking/proximity-lock/network/members)
-<!-- badges:end -->
 
 .\Start-ProximityLock.cmd
 
